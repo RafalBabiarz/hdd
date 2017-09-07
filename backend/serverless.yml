@@ -1,0 +1,25 @@
+service: hdd
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  stage: prod
+  region: eu-central-1
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+          - http: GET api/hello
+
+# you can add CloudFormation resource templates here
+#resources:
+#  Resources:
+#    NewResource:
+#      Type: AWS::S3::Bucket
+#      Properties:
+#        BucketName: my-new-bucket
+#  Outputs:
+#     NewOutput:
+#       Description: "Description for the output"
+#       Value: "Some output value"
